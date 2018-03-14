@@ -4,6 +4,7 @@
 
 from flask import Flask
 from dockerflow.flask import Dockerflow
+import json
 
 app = Flask(__name__)
 dockerflow = Dockerflow(app)
@@ -11,7 +12,13 @@ dockerflow = Dockerflow(app)
 
 @app.route('/')
 def hello_world():
-    return 'Flask Dockerized'
+    response = app.response_class(
+            response=json.dumps({'result': "Flask Dockerized"}),
+            status=200,
+            mimetype='application/json'
+            )
+    return response
+
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8000)

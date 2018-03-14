@@ -3,10 +3,17 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 
-import requests
+import pytest
+from app import app as flask_app
+from flask import url_for
 
 
-def test_view():
-    response = requests.get('http://localhost:8000/')
-    assert response.status_code == 200
-    assert response.headers['Content-Type'] == 'text/html; charset=utf-8'
+@pytest.fixture
+def app():
+    return flask_app
+
+
+def test_api_ping(client):
+    url = url_for('hello_world')
+    res = client.get(url)
+    assert res.json == {'result': 'Flask Dockerized'}
