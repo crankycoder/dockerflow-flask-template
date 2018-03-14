@@ -3,7 +3,10 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 from flask import Flask
+from dockerflow.flask import Dockerflow
+
 app = Flask(__name__)
+dockerflow = Dockerflow(app)
 
 
 @app.route('/')
