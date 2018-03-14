@@ -30,11 +30,11 @@ test:
     - ./bin/test
 
 deployment:
-  latest:
-    branch: master
-    commands:
-      # appropriately tag and push the container to dockerhub
-      - ./bin/deploy
+#   latest:
+#     branch: master
+#     commands:
+#       # appropriately tag and push the container to dockerhub
+#       - ./bin/deploy
 
   tags:
     # push all tags
