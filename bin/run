@@ -36,7 +36,7 @@ wait_for() {
 case $1 in
   web)
     #exec newrelic-admin run-program gunicorn app:app -b 0.0.0.0:${PORT} --workers 4 --access-logfile -
-    exec python app.py # TODO: need to be able to pass in port to flask
+    exec python dockerflow_flask/app.py # TODO: need to be able to pass in port to flask
     ;;
   web-dev)
     exec python app.py # TODO: need to be able to pass in port to flask

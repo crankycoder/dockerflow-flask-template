@@ -4,7 +4,7 @@
 
 
 import pytest
-from app import app as flask_app
+from dockerflow_flask.app import app as flask_app
 from flask import url_for
 
 
