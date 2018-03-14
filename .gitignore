@@ -8,3 +8,4 @@ MANIFEST
 .python-version
 .cache/
 .vscode/
+.pytest_cache
