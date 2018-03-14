@@ -1,3 +1,5 @@
+[![CircleCI](https://img.shields.io/circleci/project/github/crankycoder/dockerflow-flask-template/master.svg)](https://circleci.com/gh/crankycoder/dockerflow-flask-template)
+
 This is a skeleton project that should include all the parts required
 to spin up a dockerized flask application that plays well with
 Mozilla's docker infrastructure.
