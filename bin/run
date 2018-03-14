@@ -26,9 +26,12 @@ wait_for() {
 
 [ $# -lt 1 ] && usage
 
+# Don't need to wait for databases with just flask.  The next 3 lines
+# are probably just for Django deployments
+
 # Only wait for backend services in development
 # http://stackoverflow.com/a/13864829
-[ ! -z ${DEVELOPMENT+check} ] && wait_for db 5432 && wait_for redis 6379
+# [ ! -z ${DEVELOPMENT+check} ] && wait_for db 5432 && wait_for redis 6379
 
 case $1 in
   web)
