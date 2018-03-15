@@ -41,8 +41,3 @@ ci:
 freeze:
 	touch requirements.txt
 	pip freeze |grep -v hashin| sed -e "s/==.*//"|xargs hashin
-
-# Updating pip hashes is awful
-freeze-test:
-	touch test-requirements.txt
-	pip freeze |grep -v hashin| sed -e "s/==.*//"|xargs hashin -r test-requirements.txt
